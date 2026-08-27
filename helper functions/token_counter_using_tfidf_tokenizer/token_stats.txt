@@ -1,0 +1,15 @@
+=== TOKEN STATS (TFIDF TOKENIZER) ===
+n_emails: 676801
+min: 0
+max: 25041
+mean: 222.22811284262286
+median: 136.0
+std: 305.7009295888447
+p90: 443.0
+p95: 655.0
+p99: 1402.0
+zeros: 1
+
+=== TRUNCATION ANALYSIS ===
+BERT truncated (>512): 52446 (7.75%)
+Nomic truncated (>2048): 2217 (0.33%)
