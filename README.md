@@ -1,6 +1,6 @@
 # Multiclass Text Classification of Business Emails
 
-Code accompanying the MSc thesis *"Multi-Label Text Classification with Infrequent Labels"* (Dimitrios Tsakonas, MSc Data Science, University of the Peloponnese & NCSR "Demokritos", April 2026). The task: classify incoming/outgoing emails at a real shipbroking company into one of 11 business categories, most of them severely underrepresented.
+Code accompanying the MSc thesis of Dimitrios Tsakonas, MSc Data Science, University of the Peloponnese & NCSR "Demokritos", April 2026. The task: classify incoming/outgoing emails at a real shipbroking company into one of 11 business categories, most of them severely underrepresented.
 
 ## About
 
@@ -10,17 +10,17 @@ The thesis evaluates TF-IDF and embedding-based (BERT, Nomic Embed Text) represe
 
 ```
 email_parser/
-├── main.py                  Core TF-IDF classification pipeline (monthly cumulative folds)
-├── parsers.py                Tags raw .eml files with pipeline metadata headers
-├── csv_creator.py            Extracts email fields from raw .eml/.txt files into CSV
-├── csv_handler.py            Cleans CSVs and converts them into the pickled dataset format
 ├── dataset_readme.txt        Dataset version history/notes
 │
-├── dataset handlers/         10 scripts, one per dataset version (4.2.1 → 4.2.5.4):
-│                              preprocessing, label encoding, stemming, embeddings, etc.
+├── dataset handlers/         parsers.py, csv_creator.py, csv_handler.py (raw email
+│                              tagging/extraction/cleaning), plus 10 scripts, one per
+│                              dataset version (4.2.1 → 4.2.5.4): preprocessing, label
+│                              encoding, stemming, embeddings, etc.
 │
-├── Classifiers/               8 classifier scripts covering all 10 experiments, plus
-│                              two unreported exploratory scripts (clearly labeled as such)
+├── Classifiers/               main.py (the original TF-IDF classification pipeline,
+│                              monthly cumulative folds) plus 8 classifier scripts
+│                              covering all 10 experiments, plus two unreported
+│                              exploratory scripts (clearly labeled as such)
 │
 └── helper functions/          Standalone analysis/statistics/plotting utilities:
     ├── report figures/        Scripts that generate the thesis's Chapter 4/5 figures
@@ -53,7 +53,7 @@ Every kept file has a header docstring (Purpose / Thesis reference / Inputs / Ou
 
 | # | Experiment | Thesis section | Implemented in |
 |---|---|---|---|
-| 1 | Initial Exploration | 5.1 | `main.py`, `helper functions/report figures/exp1_*.py` |
+| 1 | Initial Exploration | 5.1 | `Classifiers/main.py`, `helper functions/report figures/exp1_*.py` |
 | 2 | Method Evaluation | 5.2 | `helper functions/report figures/exp2_conf_matrix.py` |
 | 3 | Full Scale Evaluation | 5.3 | `helper functions/report figures/confusion_matrix_creator.py`, `exp3_conf_matrix.py`, `exp3_micro_macro_graph.py` |
 | 4 | Embeddings | 5.4 | `Classifiers/bert_classifier.py` |
